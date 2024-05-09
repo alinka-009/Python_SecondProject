@@ -1,0 +1,4 @@
+sqlalchemy
+SQLAlchemy-serializer
+aiogram~=2.14.2
+environs~=8.0.0
