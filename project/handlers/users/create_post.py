@@ -36,7 +36,7 @@ async def start_creating_post(message: types.Message, state: FSMContext):
         data['content'] = []
         data['theme'] = ''
         data['created_by'] = ''
-    await message.answer('Когда вы хотите сделать расслыку?', reply_markup=keyboard_2)
+    await message.answer('Когда вы хотите сделать рассылку?', reply_markup=keyboard_2)
     await Create_Post.Choose_Method_Of_Input_Date_1.set()
 
 

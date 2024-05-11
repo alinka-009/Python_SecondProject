@@ -16,14 +16,14 @@ async def on_startup(dispatcher):
     await on_startup_notify(dispatcher)
 
 
-def repeat(coro, loop):
-    asyncio.ensure_future(coro(), loop=loop)
-    loop.call_later(5, repeat, coro, loop)
+def repeat(coro, lp):
+    asyncio.ensure_future(coro(), loop=lp)
+    loop.call_later(5, repeat, coro, lp)
 
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
-    loop.call_later(5, repeat, send_messages, loop)
+    loop.call_later(2, repeat, send_messages, loop)
     db_session.global_init("data/data_base.db")
 
     session = db_session.create_session()

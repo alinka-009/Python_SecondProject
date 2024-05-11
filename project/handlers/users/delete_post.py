@@ -30,7 +30,7 @@ async def delete_post(message: types.Message, state: FSMContext):
     await message.answer('\n\n'.join(posts))
     if index > 1:
         await message.answer(
-            'Введите номер поста для удаления( так же можно перечислить несколько постов через запятую ) ',
+            'Введите номер поста для удаления (так же можно перечислить несколько постов через запятую) ',
             reply_markup=keyboard)
         await Delete_Post.Delete.set()
 
